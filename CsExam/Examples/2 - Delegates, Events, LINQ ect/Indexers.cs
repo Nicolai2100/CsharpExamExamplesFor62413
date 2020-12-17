@@ -1,6 +1,7 @@
 ﻿using System;
 namespace CsExam.Examples
 {
+    //Advanced type contruction
     public class Indexers
     {
         private string[] strArr = new string[10]; // internal data storage

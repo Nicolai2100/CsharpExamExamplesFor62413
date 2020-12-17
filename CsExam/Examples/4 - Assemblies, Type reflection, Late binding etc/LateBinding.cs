@@ -5,7 +5,7 @@ namespace CsExam.Examples
     {
         public static void TestMethod()
         {
-            Dynamicy objects;
+           // Dynamicy objects;
             dynamic obj = 4;
             dynamic obj1 = 5.678;
 
