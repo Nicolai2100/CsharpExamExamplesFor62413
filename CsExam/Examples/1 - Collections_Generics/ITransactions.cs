@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Eksamen.Eksempler.Interface
+namespace CsExam.Examples
 {
     public interface ITransactions
     {

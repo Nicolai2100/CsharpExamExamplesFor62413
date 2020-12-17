@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Eksamen.Eksempler.Indexers
+namespace CsExam.Examples
 {
     public class Indexers
     {

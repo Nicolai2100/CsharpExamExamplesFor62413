@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Eksamen.Eksempler.Dynamic
+namespace CsExam.Examples
 {
 
     public class Dynamicy

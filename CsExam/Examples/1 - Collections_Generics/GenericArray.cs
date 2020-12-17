@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Eksamen.Eksempler.Collections_Generics
+namespace CsExam.Examples
 {
     public class GenericArray<T>
     {

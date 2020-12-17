@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Eksamen.Eksempler.Events
+namespace CsExam.Examples
 {
     public class Events
     {
@@ -17,15 +17,15 @@ namespace Eksamen.Eksempler.Events
         {
             return "Welcome " + username;
         }
-        //static void Main(string[] args)
-        //{
-        //    Events obj1 = new Events();
-        //    Events obj2 = new Events();
-        //    string result = obj1.MyEvent("Sersan");
-        //    string result1 = obj2.MyHello("Aslan");
-        //    Console.WriteLine(result);
-        //    Console.WriteLine(result1);
-        //}
+        public static void TestMethod()
+        {
+            Events obj1 = new Events();
+            Events obj2 = new Events();
+            string result = obj1.MyEvent("Sersan");
+            string result1 = obj2.MyHello("Aslan");
+            Console.WriteLine(result);
+            Console.WriteLine(result1);
+        }
     }
 
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Eksamen.Eksempler.Operator_Overloading
+namespace CsExam.Examples
 {
     public class Operator_Overloading
     {
