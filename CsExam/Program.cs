@@ -11,9 +11,11 @@ namespace CsExam
 
             //2 - Delegates, Events, LINQ - Language - Integrated Query
             //DelegatesExample.testings();
-            Events.TestMethod();
+            //Events.TestMethod();
 
 
+            //5 - Assemblies
+            Assemblies.TestMethod(); //Prints out a message, that is generated from a AssemblyExample.dll
 
             //6 - LINQ to XML
             //SerializeTest.TestExample();

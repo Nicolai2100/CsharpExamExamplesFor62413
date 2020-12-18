@@ -5,16 +5,11 @@ namespace CsExam.Examples
 {
     public class Assemblies
     {
-        private ClassExample _blabla = new ClassExample();
-
-        static void TestMethod()
+        public static void TestMethod()
         {
-            Console.WriteLine();
+            ClassExample example = new ClassExample();
+            Console.WriteLine(example.MessageFromAssembly("Nicolai"));
         }
-
-        public String Test()
-        {
-            _blabla
-        }
+        
     }
 }
