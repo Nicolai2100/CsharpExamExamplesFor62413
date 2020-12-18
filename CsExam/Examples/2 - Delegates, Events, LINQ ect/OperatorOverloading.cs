@@ -3,75 +3,68 @@ namespace CsExam.Examples
 {
     public class OperatorOverloading
     {
-        //static void Main(string[] args)
-        //{
-        //    Box Box1 = new Box();   // Declare Box1 of type Box
-        //    Box Box2 = new Box();   // Declare Box2 of type Box
-        //    Box Box3 = new Box();   // Declare Box3 of type Box
-        //    double volume = 0.0;    // Store the volume of a box here
+        public static void TestMethod()
+        {
+            var complexN1 = new ComplexNumber(1.1, 2.2);
+            var complexN2 = new ComplexNumber(3.3, 4.4);
 
-        //    // box 1 specification
-        //    Box1.setLength(6.0);
-        //    Box1.setBreadth(7.0);
-        //    Box1.setHeight(5.0);
+            // Add two object as follows:
+            var result = complexN1 + complexN2;
+            Console.WriteLine("Value addition is : {0}", result);
 
-        //    // box 2 specification
-        //    Box2.setLength(12.0);
-        //    Box2.setBreadth(13.0);
-        //    Box2.setHeight(10.0);
+            result = complexN1 - complexN2;
+            Console.WriteLine("Value addition is : {0}", result);
 
-        //    // volume of box 1
-        //    volume = Box1.getVolume();
-        //    Console.WriteLine("Volume of Box1 : {0}", volume);
+            result = complexN1 * complexN2;
+            Console.WriteLine("Value addition is : {0}", result);
 
-        //    // volume of box 2
-        //    volume = Box2.getVolume();
-        //    Console.WriteLine("Volume of Box2 : {0}", volume);
-
-        //    // Add two object as follows:
-        //    Box3 = Box1 + Box2;
-
-        //    // volume of box 3
-        //    volume = Box3.getVolume();
-        //    Console.WriteLine("Volume of Box3 : {0}", volume);
-        //    Console.ReadKey();
-        //}
+            Console.ReadKey();
+        }
     }
 
-
-    class Box
+    class ComplexNumber
     {
-        private double length;   // Length of a box
-        private double breadth;  // Breadth of a box
-        private double height;   // Height of a box
+        public double Real { get; set; }
+        public double Imaginary { get; set; }
 
-        public double getVolume()
+        public ComplexNumber(double real, double imaginary)
         {
-            return length * breadth * height;
-        }
-        public void setLength(double len)
-        {
-            length = len;
-        }
-        public void setBreadth(double bre)
-        {
-            breadth = bre;
-        }
-        public void setHeight(double hei)
-        {
-            height = hei;
+            Real = real;
+            Imaginary = imaginary;
         }
 
         // Overload + operator to add two Box objects.
-        public static Box operator +(Box b, Box c)
+        public static ComplexNumber operator +(ComplexNumber a, ComplexNumber c)
         {
-            Box box = new Box();
-            box.length = b.length + c.length;
-            box.breadth = b.breadth + c.breadth;
-            box.height = b.height + c.height;
-            return box;
+            var cn = new ComplexNumber(0.0, 0.0);
+            cn.Real = a.Real + c.Real;
+            cn.Imaginary = a.Imaginary + c.Imaginary;
+            return cn;
+        }
+        public static ComplexNumber operator -(ComplexNumber a, ComplexNumber b)
+        {
+            var cn = new ComplexNumber(0.0, 0.0);
+            cn.Real = a.Real - b.Real;
+            cn.Imaginary = a.Imaginary - b.Imaginary;
+            return cn;
+        }
+        public static ComplexNumber operator *(ComplexNumber a, ComplexNumber b)
+        {
+            var cn = new ComplexNumber(0.0, 0.0);
+            cn.Real = (a.Real * b.Real) - (a.Imaginary * b.Imaginary);
+            cn.Imaginary = (a.Real * b.Imaginary) + (a.Imaginary * b.Real);
+            return cn;
         }
 
-    }
+        public override string ToString()
+        {
+            var str = "";
+            if (Imaginary > 0)
+                str = string.Format("{0} + {1}i", Real, Imaginary);
+            else
+                str = string.Format("{0} {1}i", Real, Imaginary);
 
+            return str;
+        }
+    }
 }

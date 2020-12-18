@@ -3,9 +3,8 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace CsExam.Examples._6___LINQ_To_XML
+namespace CsExam.Examples
 {
-
     // The XmlRoot attribute allows you to set an alternate name
     // (PurchaseOrder) for the XML element and its namespace. By
     // default, the XmlSerializer uses the class name. The attribute
@@ -27,7 +26,6 @@ namespace CsExam.Examples._6___LINQ_To_XML
         public decimal ShipCost;
         public decimal TotalCost;
     }
-
     public class Address
     {
         // The XmlAttribute attribute instructs the XmlSerializer to serialize the
@@ -45,7 +43,6 @@ namespace CsExam.Examples._6___LINQ_To_XML
         public string State;
         public string Zip;
     }
-
     public class OrderedItem
     {
         public string ItemName;
@@ -61,15 +58,34 @@ namespace CsExam.Examples._6___LINQ_To_XML
             LineTotal = UnitPrice * Quantity;
         }
     }
-
     public class SerializeTest
     {
-        public static void TestExample()
+        public static void CreateXmlFile()
         {
             // Read and write purchase orders.
             SerializeTest t = new SerializeTest();
-            t.CreatePO("po.xml");
-            t.ReadPO("po.xml");
+
+            string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
+            if (Environment.OSVersion.Version.Major >= 6)
+            {
+                path = Directory.GetParent(path).ToString();
+            }
+            //Skab filen og gem den i brugerens home dir
+            t.CreatePO(path + "\\po.xml");
+        }
+
+        public static void ReadSavedXmlFile()
+        {
+            // Read and write purchase orders.
+            SerializeTest t = new SerializeTest();
+
+            string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
+            if (Environment.OSVersion.Version.Major >= 6)
+            {
+                path = Directory.GetParent(path).ToString();
+            }
+            //Indlæs filen fra brugerens home dir
+            t.ReadPO(path + "\\po.xml");
         }
 
         private void CreatePO(string filename)
@@ -116,7 +132,6 @@ namespace CsExam.Examples._6___LINQ_To_XML
             serializer.Serialize(writer, po);
             writer.Close();
         }
-
         protected void ReadPO(string filename)
         {
             // Creates an instance of the XmlSerializer class;
@@ -162,7 +177,6 @@ namespace CsExam.Examples._6___LINQ_To_XML
             "\n\t\t\t\t\t Total\t\t" + po.TotalCost
             );
         }
-
         protected void ReadAddress(Address a, string label)
         {
             // Reads the fields of the Address.
@@ -180,7 +194,6 @@ namespace CsExam.Examples._6___LINQ_To_XML
         {
             Console.WriteLine("Unknown Node:" + e.Name + "\t" + e.Text);
         }
-
         protected void serializer_UnknownAttribute
         (object sender, XmlAttributeEventArgs e)
         {
@@ -189,7 +202,4 @@ namespace CsExam.Examples._6___LINQ_To_XML
             attr.Name + "='" + attr.Value + "'");
         }
     }
-
-
-
 }
