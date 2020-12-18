@@ -5,17 +5,16 @@ namespace CsExam.Examples
     {
         public static void TestMethod()
         {
-           // Dynamicy objects;
+           // Dynamiske objeke. Kompilatoren kender ikke deres type. Kendes først ved run-time;
             dynamic obj = 4;
             dynamic obj1 = 5.678;
+            dynamic obj2 = "Besked";
 
-            //Display the type of objects
-            Console.WriteLine("The type of the objects are :");
-
-            //GetType() method is
-            //used to get the type
+            //Skriv objekternes typer. Brug .GetType til at hente den.
+            Console.WriteLine("Objekternes type er :");
             Console.WriteLine(obj.GetType());
             Console.WriteLine(obj1.GetType());
+            Console.WriteLine(obj2.GetType());
         }
     }
 }
