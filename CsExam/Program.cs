@@ -16,6 +16,8 @@ namespace CsExam
 
             //5 - Assemblies
             Assemblies.TestMethod(); //Prints out a message, that is generated from a AssemblyExample.dll
+            Type_Reflection2.TestMethod();
+            LateBinding.TestMethod();
 
             //6 - LINQ to XML
             //SerializeTest.TestExample();
