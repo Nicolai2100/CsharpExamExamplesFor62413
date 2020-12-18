@@ -1,6 +1,5 @@
 using System;
 using System.Reflection;
-using AssemblyExample;
 
 namespace CsExam.Examples
 {

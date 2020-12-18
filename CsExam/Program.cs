@@ -24,9 +24,9 @@ namespace CsExam
             //Attributes.TestMethod();
             
             //5 – AppDomains, Multi-threads and parallel programming
-            //AppDomains.TestMethod();
-            AppDomainTest.Class1.TestMethod();
-            
+            //MultiThreads.TestMethod();
+            MultiThreads_Locks.TestMethod();
+            MultiThreads_Locks.TestMethod2();
 
             //6 - LINQ to XML
             //SerializeTest.TestExample();
