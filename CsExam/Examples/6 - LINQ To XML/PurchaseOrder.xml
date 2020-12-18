@@ -22,13 +22,20 @@
 			<ProductName>Lawnmower</ProductName>
 			<Quantity>1</Quantity>
 			<USPrice>148.95</USPrice>
+			<ShipDate>2020-12-21</ShipDate>
 			<Comment>Confirm this is electric</Comment>
 		</Item>
 		<Item PartNumber="926-AA">
 			<ProductName>Baby Monitor</ProductName>
 			<Quantity>2</Quantity>
 			<USPrice>39.98</USPrice>
-			<ShipDate>1999-05-21</ShipDate>
+			<ShipDate>2020-12-21</ShipDate>
+		</Item>
+		<Item PartNumber="126-AB">
+			<ProductName>Computer Mouse</ProductName>
+			<Quantity>1</Quantity>
+			<USPrice>20.99</USPrice>
+			<ShipDate>2020-12-28</ShipDate>
 		</Item>
 	</Items>
 </PurchaseOrder>

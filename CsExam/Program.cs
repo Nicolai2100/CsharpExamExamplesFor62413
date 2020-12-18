@@ -1,5 +1,6 @@
 ﻿using CsExam.Examples;
 using System;
+using System.IO;
 
 namespace CsExam
 {
@@ -10,7 +11,7 @@ namespace CsExam
             //1 - Collections, Generics, Exceptions, Interfaces
             //ExceptionExample.TestMethod();
             //GenericArrayExample.TestMethod();
-            Collections.TestMethod();
+            //Collections.TestMethod();
             //2 - Delegates, Events, LINQ - Language - Integrated Query
             //DelegatesExample.testings();
             //Events.TestMethod();
@@ -23,18 +24,17 @@ namespace CsExam
             //Assemblies.TestMethod(); //Prints out a message, that is generated from a AssemblyExample.dll
             //Type_Reflection2.TestMethod();
             //LateBinding.TestMethod();
-            Attributes.TestMethod();
+            //Attributes.TestMethod();
 
             //6 - LINQ to XML
-            //SerializeTest.TestExample();
-            //var xml = new XmlExample();
-            //xml.loadXml();
-            //XmlExample.XMLTree();
-            //XmlExample.instaElements();
-            //var xmlReader = new XmlExample();
+            //SerializeTest.CreateXmlFile();
+            //SerializeTest.ReadSavedXmlFile();
+            XMLToLINQExample.LoadXml();
+
 
             //7 - Dynamic Values
             //DynamicExample.TestMethod();
+
         }
     }
 }
