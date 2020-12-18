@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Eksamen.Eksempler.Exception
+namespace CsExam.Examples
 {
     public class Exceptions
     {

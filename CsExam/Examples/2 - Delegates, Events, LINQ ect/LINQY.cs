@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Eksamen.Eksempler.LINQ
+namespace CsExam.Examples
 {
     public class LINQY
     {

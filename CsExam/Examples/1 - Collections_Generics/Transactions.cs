@@ -1,7 +1,6 @@
 ﻿using System;
-namespace Eksamen.Eksempler.Interface
+namespace CsExam.Examples
 {
-
     public class Transaction : ITransactions
     {
         private string tCode;
@@ -28,18 +27,18 @@ namespace Eksamen.Eksempler.Interface
         }
     }
 
-    class Tester
-    {
+    //class Tester
+    //{
 
-        //static void Main(string[] args)
-        //{
-        //    Transaction t1 = new Transaction("001", "8/10/2012", 78900.00);
-        //    Transaction t2 = new Transaction("002", "9/10/2012", 451900.00);
+    //    //static void Main(string[] args)
+    //    //{
+    //    //    Transaction t1 = new Transaction("001", "8/10/2012", 78900.00);
+    //    //    Transaction t2 = new Transaction("002", "9/10/2012", 451900.00);
 
-        //    t1.showTransaction();
-        //    t2.showTransaction();
-        //    Console.ReadKey();
-        //}
-    }
+    //    //    t1.showTransaction();
+    //    //    t2.showTransaction();
+    //    //    Console.ReadKey();
+    //    //}
+    //}
 
 }

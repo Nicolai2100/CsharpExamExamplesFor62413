@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-
-namespace Eksamen.Eksempler.Collections_Generics
+namespace CsExam.Examples
 {
     public class GenericArray<T>
     {
@@ -20,7 +18,6 @@ namespace Eksamen.Eksempler.Collections_Generics
             array[index] = value;
         }
     }
-
     class Tester
     {
         //static void Main(string[] args)
@@ -62,7 +59,6 @@ namespace Eksamen.Eksempler.Collections_Generics
         //    Console.ReadKey();
         //    }
         }
-
 }
 
 
