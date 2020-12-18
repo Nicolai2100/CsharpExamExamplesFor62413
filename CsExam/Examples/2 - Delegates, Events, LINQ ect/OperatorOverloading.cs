@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CsExam.Examples
 {
-    public class Operator_Overloading
+    public class OperatorOverloading
     {
         //static void Main(string[] args)
         //{

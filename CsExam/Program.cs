@@ -9,10 +9,11 @@ namespace CsExam
         {
             //1 - Collections, Generics, Exceptions, Interfaces
 
+            
             //2 - Delegates, Events, LINQ - Language - Integrated Query
             //DelegatesExample.testings();
-            Events.TestMethod();
-
+            //Events.TestMethod();
+            SampleCollection<String>.TestMethod();
 
 
             //6 - LINQ to XML

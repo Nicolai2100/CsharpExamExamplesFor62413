@@ -2,41 +2,30 @@
 namespace CsExam.Examples
 {
     //Advanced type contruction
-    public class Indexers
+
+    class SampleCollection<T>
     {
-        private string[] strArr = new string[10]; // internal data storage
+        // Declare an array to store the data elements.
+        private T[] arr = new T[100];
 
-        // Indexer method
-        public string this[int index]
+        // Define the indexer to allow client code to use [] notation.
+        public T this[int i]
         {
-            get
-            {
-                if (index < 0 && index >= strArr.Length)
-                    throw new IndexOutOfRangeException("Index out of range");
-
-                return strArr[index];
-            }
-
-            set
-            {
-                if (index < 0 || index >= strArr.Length)
-                    throw new IndexOutOfRangeException("Index out of range");
-
-                strArr[index] = value;
-            }
+            get { return arr[i]; }
+            set { arr[i] = value; }
         }
 
-        //public static void Main(string[] args)
-        //{
-        //    Indexers strStore = new Indexers();
+        public static void TestMethod()
+        {
+            var stringCollection = new SampleCollection<string>();
+            stringCollection[0] = "Hello, World - One";
+            stringCollection[1] = "Hello, World - Two";
+            stringCollection[2] = "Hello, World - Three";
+            stringCollection[3] = "Hello, World - Four";
+          
+            for (int i = 0; i < 10; i++)
+                Console.WriteLine(stringCollection[i]);
 
-        //    strStore[0] = "One";
-        //    strStore[1] = "Two";
-        //    strStore[2] = "Three";
-        //    strStore[3] = "Four";
-
-        //    for (int i = 0; i < 10; i++)
-        //        Console.WriteLine(strStore[i]);
-        //}
+        }
     }
 }
