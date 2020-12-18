@@ -13,15 +13,20 @@ namespace CsExam
             //2 - Delegates, Events, LINQ - Language - Integrated Query
             //DelegatesExample.testings();
             //Events.TestMethod();
-            SampleCollection<String>.TestMethod();
+            //SampleCollection<String>.TestMethod();
             //Events.TestMethod();
 
 
-            //5 - Assemblies
+            //4 - Assemblies, Type reflection, Late binding, and Attribute Programming
             //Assemblies.TestMethod(); //Prints out a message, that is generated from a AssemblyExample.dll
             //Type_Reflection2.TestMethod();
             //LateBinding.TestMethod();
-            Attributes.TestMethod();
+            //Attributes.TestMethod();
+            
+            //5 – AppDomains, Multi-threads and parallel programming
+            //AppDomains.TestMethod();
+            AppDomainTest.Class1.TestMethod();
+            
 
             //6 - LINQ to XML
             //SerializeTest.TestExample();

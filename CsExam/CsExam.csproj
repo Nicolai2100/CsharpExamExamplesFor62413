@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AppDomainTest\AppDomainTest.csproj" />
     <ProjectReference Include="..\AssemblyExample\AssemblyExample.csproj" />
   </ItemGroup>
 
