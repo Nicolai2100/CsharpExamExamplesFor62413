@@ -1,17 +1,16 @@
 ﻿using System;
 namespace CsExam.Examples
 {
-    public class Exceptions
+    public class ExceptionExample
     {
-
         int result;
 
-        Exceptions()
+        ExceptionExample()
         {
             result = 0;
         }
 
-        public void division(int num1, int num2)
+        public void FaultyDivision(int num1, int num2)
         {
             try
             {
@@ -26,12 +25,11 @@ namespace CsExam.Examples
                 Console.WriteLine("Result: {0}", result);
             }
         }
-
-        //static void Main(string[] args)
-        //{
-        //    Exceptions d = new Exceptions();
-        //    d.division(25, 0);
-        //    Console.ReadKey();
-        //}
+        public static void TestMethod()
+        {
+            var d = new ExceptionExample();
+            d.FaultyDivision(25, 0);
+            Console.ReadKey();
+        }
     }
 }
