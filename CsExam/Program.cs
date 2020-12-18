@@ -27,11 +27,11 @@ namespace CsExam
             //Attributes.TestMethod();
 
             //6 - LINQ to XML
-            //SerializeTest.CreateXmlFile();
-            //SerializeTest.ReadSavedXmlFile();
-            XMLToLINQExample.LoadXml();
+            SerializeTest.CreateXmlFile();
+            SerializeTest.ReadSavedXmlFile();
 
-
+            //XMLToLINQExample.LoadXml();
+           
             //7 - Dynamic Values
             //DynamicExample.TestMethod();
 

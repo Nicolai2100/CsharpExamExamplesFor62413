@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
@@ -10,7 +11,9 @@ namespace CsExam.Examples
     {
         public static void LoadXml()
         {
-            XElement purchaseOrder = XElement.Load("Examples\\6 - LINQ To XML\\PurchaseOrder.xml");
+            string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
+
+            XElement purchaseOrder = XElement.Load(path + "\\PurchaseOrder.xml");
             Console.WriteLine("Printer hele xml-filen");
             Console.WriteLine(purchaseOrder);
 
