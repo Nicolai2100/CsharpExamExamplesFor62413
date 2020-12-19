@@ -20,12 +20,19 @@ namespace CsExam
             //LINQExample.TestMethod();
             //OperatorOverloading.TestMethod();       
 
+            //4 - Assemblies, Type reflection, Late binding, and Attribute Programming
 
             //5 - Assemblies
             //Assemblies.TestMethod(); //Prints out a message, that is generated from a AssemblyExample.dll
             //Type_Reflection2.TestMethod();
             //LateBinding.TestMethod();
             //Attributes.TestMethod();
+            //Attributes.TestMethod();
+            
+            //5 – AppDomains, Multi-threads and parallel programming
+            //MultiThreads.TestMethod();
+            MultiThreads_Locks.TestMethod();
+            MultiThreads_Locks.TestMethod2();
 
             //6 - LINQ to XML
             //SerializeTest.CreateXmlFile();
