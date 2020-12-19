@@ -15,7 +15,11 @@ namespace CsExam.Examples
             Console.WriteLine("Printer hele xml-filen");
             Console.WriteLine(purchaseOrder);
 
-            IEnumerable<string> partNos = purchaseOrder.Descendants("Item").Select(x => (string)x.Attribute("PartNumber"));
+            //IEnumerable<string> partNos = purchaseOrder.Descendants("Item").Select(x => (string)x.Attribute("PartNumber"));
+
+            IEnumerable<string> partNos = from item in purchaseOrder.Descendants("Item")
+                                          select (string)item.Attribute("PartNumber");
+
             Console.WriteLine("Printer alle \"items\" med PartNumber i PO");
             foreach (var item in partNos)
             {
@@ -26,10 +30,14 @@ namespace CsExam.Examples
 
 
 
-            IEnumerable<XElement> dataFromSource2 = purchaseOrder.Descendants("Item")
-                                                   .Where(item => ((string)item.Element("ProductName")).Contains("Baby"))
-                                         .OrderBy(order => order.Element("PartNumber"));
-            
+            //IEnumerable<XElement> dataFromSource2 = purchaseOrder.Descendants("Item")
+            //                                       .Where(item => ((string)item.Element("ProductName")).Contains("Baby"))
+            //                             .OrderBy(order => order.Element("PartNumber"));
+
+            IEnumerable<XElement> dataFromSource2 = from item in purchaseOrder.Descendants("Item")
+                                                    where item.Element("ProductName").Value.Contains("Baby")
+                                                    orderby (string)item.Element("PartNumber")
+                                                    select item;
 
             Console.WriteLine("Printer alle baby-items i PO");
             foreach (var item in dataFromSource2)
@@ -37,9 +45,10 @@ namespace CsExam.Examples
                 Console.WriteLine("The items are: {0}", item);
             }
 
-            IEnumerable<XElement> pricesByPartNos = purchaseOrder.Descendants("Item")
-                                        .Where(item => (int)item.Element("Quantity") * (decimal)item.Element("USPrice") > 78)
-                                        .OrderBy(order => order.Element("PartNumber"));
+            IEnumerable<XElement> pricesByPartNos = from item in purchaseOrder.Descendants("Item")
+                                                    where (int)item.Element("Quantity") * (decimal)item.Element("USPrice") > 78
+                                                    orderby (string)item.Element("PartNumber")
+                                                    select item;
 
             Console.WriteLine("Printer alle \"items\" i PO med en samlet pris højere end 78 $");
             foreach (var item in pricesByPartNos)
@@ -58,7 +67,7 @@ namespace CsExam.Examples
 
         }
 
-        //Hvis man vil skrive direkte i et xml-objekt
+        //Hvis man vil skrive et xml-objekt direkte
         public static void XMLTree()
         {
             XElement contacts =

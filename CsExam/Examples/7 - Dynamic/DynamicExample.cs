@@ -7,8 +7,8 @@ namespace CsExam.Examples
         {
             Console.WriteLine("Value: {0}, type: {1}", val, val.GetType());
 
-            // val.  - Virker ikke, da det besluttes under run time.
-            if (val is String)
+            // val.  - Virker ikke, da Typen vurderes under run time.
+            if (val is string)
             {
                 try
                 {

@@ -13,6 +13,7 @@ namespace CsExam
             //ExceptionExample.TestMethod();
             //GenericArrayExample.TestMethod();
             //Collections.TestMethod();
+           
             //2 - Delegates, Events, LINQ - Language - Integrated Query
             //DelegatesExample.testings();
             //Events.TestMethod();
@@ -42,11 +43,13 @@ namespace CsExam
             //6 - LINQ to XML
             //SerializeTest.CreateXmlFile();
             //SerializeTest.ReadSavedXmlFile();
-            //XMLToLINQExample.LoadXml();
+            XMLToLINQExample.LoadXml();
 
             //7 - Dynamic Values
             //DynamicExample.TestMethod();
            // DynamicAssemblyExample.TestMethod();
+            //DynamicExample.TestMethod();
+            //DynamicAssemblyExample.TestMethod();
             //C: \Users\NicolaiLarsen\source\repos\CsExam\CsExam\Examples\6 - LINQ To XML
 
 
