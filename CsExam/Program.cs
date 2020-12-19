@@ -1,7 +1,6 @@
 ﻿using CsExam.Examples;
 using System;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace CsExam
 {
@@ -43,11 +42,9 @@ namespace CsExam
             //6 - LINQ to XML
             //SerializeTest.CreateXmlFile();
             //SerializeTest.ReadSavedXmlFile();
-            XMLToLINQExample.LoadXml();
+            //XMLToLINQExample.LoadXml();
 
             //7 - Dynamic Values
-            //DynamicExample.TestMethod();
-           // DynamicAssemblyExample.TestMethod();
             //DynamicExample.TestMethod();
             //DynamicAssemblyExample.TestMethod();
             //C: \Users\NicolaiLarsen\source\repos\CsExam\CsExam\Examples\6 - LINQ To XML
