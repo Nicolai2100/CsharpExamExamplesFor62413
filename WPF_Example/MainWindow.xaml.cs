@@ -12,7 +12,6 @@ namespace WPF_Example
     /// Interaction logic for MainWindow.xaml - Extensible application markup language
     public partial class MainWindow : INotifyPropertyChanged
     {
-        private bool hasBeenClicked = false;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
