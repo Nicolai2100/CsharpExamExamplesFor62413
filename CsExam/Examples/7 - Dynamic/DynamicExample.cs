@@ -29,7 +29,6 @@ namespace CsExam.Examples
                 {
                     Console.WriteLine(mcrre.Message);
                 }
-
             }
             return val;
         }
@@ -41,11 +40,6 @@ namespace CsExam.Examples
             Console.WriteLine("Value: {0}", PrintValue(100.1));
             Console.WriteLine("Value: {0}", PrintValue(true));
             Console.WriteLine("Value: {0}", PrintValue(DateTime.Now));
-
-            //Kontra late binding:
-            var varible = "a";
-            //varible = 2;
-
         }
     }
 }
