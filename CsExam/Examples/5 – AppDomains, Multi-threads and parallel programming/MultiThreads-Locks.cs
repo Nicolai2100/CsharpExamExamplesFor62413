@@ -35,10 +35,11 @@ namespace CsExam.Examples
             }
         }
         
-        public static void TestMethod2()
+        public static void TestWithLock()
         {
             new Thread (WriteDoneWithLock).Start();
             WriteDoneWithLock();
         }
+
     }
 }

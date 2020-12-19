@@ -68,7 +68,8 @@ namespace CsExam.Examples
             string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
             Console.WriteLine("Lagt i " + path);
             //Skab filen og gem den i brugerens home dir
-            t.CreatePO(path + "\\po.xml");
+            //t.CreatePO(path + "\\po.xml");
+            t.CreatePO("po2.xml");
         }
 
 
