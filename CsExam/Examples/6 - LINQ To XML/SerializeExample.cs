@@ -66,13 +66,10 @@ namespace CsExam.Examples
             SerializeTest t = new SerializeTest();
 
             string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
-            //if (Environment.OSVersion.Version.Major >= 6)
-            //{
-            //    path = Directory.GetParent(path).ToString();
-            //}
             //Skab filen og gem den i brugerens home dir
             t.CreatePO(path + "\\po.xml");
         }
+
 
         public static void ReadSavedXmlFile()
         {

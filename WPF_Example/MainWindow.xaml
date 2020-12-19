@@ -7,14 +7,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1000">
     <Grid x:Name="MainGrid">
-        <Button x:Name="Button1" Content="Filmkritikeren" HorizontalAlignment="Left" Margin="458,218,0,0" VerticalAlignment="Top" Height="36" Width="89" Click="Button_Click" />
-        <Button x:Name="Button2" Content="Hjælp" HorizontalAlignment="Left" Margin="458,311,0,0" VerticalAlignment="Top" Height="24" Width="47" Click="Button_Click2" />
-        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Margin="458,161,0,0" Text="Indtast titel på yndlingsfilm:" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Grid.ColumnDefinitions    >
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
 
-        <WebBrowser x:Name="webb" Visibility="Hidden" Margin="523,0,10,0" VerticalAlignment="Center" Height="493" Source="https://www.google.com/"/>
-        <Image Name="imag" Margin="19,17,547,95"/>
+        <TextBox x:Name="TextBox1" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" Width="120" />
+        <Button x:Name="Button1" Content="Filmkritikeren" Grid.Column="1" Grid.Row="1" Click="Button_Click" />
+        <Button x:Name="Button2" Content="{Binding ButtonText, FallbackValue='Søg hjælp!'}" Grid.Column="1" Grid.Row="2" Click="Button_Click2" />
 
-        <Rectangle x:Name="Rect1" Height="20" Width="40" Stroke="Green" Margin="402,296,358,118" ToolTip="En Firkant">
+        <WebBrowser x:Name="webb" Grid.Column="3" Grid.Row="3" Visibility="Hidden" Source="https://www.google.com/"/>
+        <Image Name="imag" Grid.Column="3" Grid.Row="3" Visibility="Visible" />
+
+        <Rectangle x:Name="Rect1" Grid.Column="2" Grid.Row="1" Height="20" Width="40" Stroke="Green" ToolTip="En Firkant">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.035276180410083" ScaleY="0.89657547216805356"/>
@@ -24,7 +39,6 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-
 
 
     </Grid>

@@ -38,17 +38,17 @@ namespace CsExam.Examples
             objMyDelegate("1 ");
             Console.WriteLine("Value of str: {0}", getStr());
 
-            objMyDelegate += new StrDelegate(GetData2);
+            objMyDelegate += GetData2;
             ////GetData1 + GetData2 is called
             objMyDelegate("2 ");
             Console.WriteLine("Value of str: {0}", getStr());
 
-            objMyDelegate = new StrDelegate(GetData1) + new StrDelegate(GetData2) + new StrDelegate(GetData3);
+            objMyDelegate += new StrDelegate(GetData3);
             ////GetData1 + GetData2 + GetData3 is called
             objMyDelegate("3 ");
             Console.WriteLine("Value of str: {0}", getStr());
 
-            objMyDelegate -= new StrDelegate(GetData2);
+            objMyDelegate -= GetData2;
             ////GetData1 + GetData3 is called
             objMyDelegate("4 ");
             Console.WriteLine("Value of str: {0}", getStr());

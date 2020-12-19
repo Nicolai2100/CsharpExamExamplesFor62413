@@ -9,7 +9,6 @@ namespace CsExam.Examples
         {
             result = 0;
         }
-
         public void FaultyDivision(int num1, int num2)
         {
             try

@@ -20,6 +20,7 @@ namespace CsExam
             //LINQExample.TestMethod();
             //OperatorOverloading.TestMethod();       
 
+
             //5 - Assemblies
             //Assemblies.TestMethod(); //Prints out a message, that is generated from a AssemblyExample.dll
             //Type_Reflection2.TestMethod();
@@ -27,14 +28,24 @@ namespace CsExam
             //Attributes.TestMethod();
 
             //6 - LINQ to XML
-            SerializeTest.CreateXmlFile();
-            SerializeTest.ReadSavedXmlFile();
-
+            //SerializeTest.CreateXmlFile();
+            //SerializeTest.ReadSavedXmlFile();
             //XMLToLINQExample.LoadXml();
-           
+
             //7 - Dynamic Values
             //DynamicExample.TestMethod();
+           // DynamicAssemblyExample.TestMethod();
+            //        C: \Users\NicolaiLarsen\source\repos\CsExam\CsExam\Examples\6 - LINQ To XML
 
+
+
+            // .GetFolderPath()).FullName;
+
+           
+
+            // string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
+            Console.WriteLine("Press any key to exit");
+            Console.ReadLine();
         }
     }
 }

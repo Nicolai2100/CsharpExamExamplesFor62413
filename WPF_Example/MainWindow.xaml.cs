@@ -5,12 +5,13 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 
 namespace WPF_Example
-{
-    /// <summary>
+{   /// Husk: XAML, Data binding properties, Events
     /// Interaction logic for MainWindow.xaml - Extensible application markup language
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private bool hasBeenClicked = false;
+        public string BoundStr { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -23,11 +24,12 @@ namespace WPF_Example
             Console.WriteLine(path);
             BitmapImage bi = new BitmapImage(new Uri(string.Format(@"{0}\giphy(1).gif", path)));
             imag.Source = bi;
+            TextBox1.Text = "Indtast titel på yndlingsfilm:";
         }
 
         protected void Button_Click(object sender, RoutedEventArgs rea)
         {
-            var outPut = "";
+            var outPut = TextBox1.Text;
             if (TextBox1.Text == "Indtast titel på yndlingsfilm:")
             {
                 outPut = "Du glemte at indtaste en titel! - \nPrøv igen...";
@@ -36,14 +38,13 @@ namespace WPF_Example
             {
                 if (TextBox1.Text.Length % 2 == 0)
                 {
-                    outPut = "Det er en god film - \nDu har god smag!";
+                    outPut += " er en god film - \nDu har god smag!";
                 }
                 else
                 {
-                    outPut = "Det er en dårlig film...";
+                    outPut = " er en dårlig film...";
                 }
             }
-
             MessageBox.Show(outPut);
             Animation_Click(sender, rea);
         }
@@ -73,6 +74,16 @@ namespace WPF_Example
             //da.RepeatBehavior = new RepeatBehavior(5); // 5 times
             rt1.BeginAnimation(RotateTransform.AngleProperty, da);
             rt2.BeginAnimation(RotateTransform.AngleProperty, da);
+        }
+
+        private void Textbox_Focus(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            hasBeenClicked = !hasBeenClicked;
+            var str = "";
+            if (!hasBeenClicked)
+            {
+                str = "Indtast titel på yndlingsfilm:";
+            }
         }
     }
 }

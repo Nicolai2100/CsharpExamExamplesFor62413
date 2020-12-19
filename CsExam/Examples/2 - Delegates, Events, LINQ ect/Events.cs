@@ -2,7 +2,6 @@
 
 namespace CsExam.Examples
 {
-
     public class Events
     {
         public static void TestMethod()
