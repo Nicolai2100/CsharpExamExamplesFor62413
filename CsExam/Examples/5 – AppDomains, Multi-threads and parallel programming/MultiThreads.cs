@@ -6,8 +6,7 @@ namespace CsExam.Examples
     public class MultiThreads
     {
         public static void Method1() 
-        { 
-  
+        {
             // Printer tallene fra 1 til 10
             for (int I = 0; I <= 10; I++) { 
                 Console.WriteLine("Method1 : {0}", I);
@@ -29,6 +28,14 @@ namespace CsExam.Examples
             Thread thr2 = new Thread(Method2); 
             thr1.Start(); 
             thr2.Start(); 
+        }
+        
+        public static void TestJoin()
+        {
+            Thread t = new Thread(Method1);
+            t.Start();
+            t.Join();
+            Console.WriteLine("Tråden t er nu færdig!");
         }
     }
 }

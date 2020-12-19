@@ -29,13 +29,14 @@ namespace CsExam
             
             //5 – AppDomains, Multi-threads and parallel programming
             //MultiThreads.TestMethod();
-            MultiThreads_Locks.TestMethod();
-            MultiThreads_Locks.TestMethod2();
+            //MultiThreads_Locks.TestMethod();
+            //MultiThreads_Locks.TestWithLock();
+            //MultiThreads.TestJoin();
 
             //6 - LINQ to XML
-            //SerializeTest.CreateXmlFile();
+            SerializeTest.CreateXmlFile();
             //SerializeTest.ReadSavedXmlFile();
-            XMLToLINQExample.LoadXml();
+            //XMLToLINQExample.LoadXml();
 
 
             //7 - Dynamic Values

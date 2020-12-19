@@ -71,7 +71,8 @@ namespace CsExam.Examples
                 path = Directory.GetParent(path).ToString();
             }
             //Skab filen og gem den i brugerens home dir
-            t.CreatePO(path + "\\po.xml");
+            //t.CreatePO(path + "\\po.xml");
+            t.CreatePO("po2.xml");
         }
 
         public static void ReadSavedXmlFile()
