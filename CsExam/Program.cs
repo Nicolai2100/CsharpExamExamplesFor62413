@@ -1,6 +1,7 @@
 ﻿using CsExam.Examples;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace CsExam
 {
@@ -22,7 +23,7 @@ namespace CsExam
 
             //4 - Assemblies, Type reflection, Late binding, and Attribute Programming
             //Assemblies.TestMethod(); //Prints out a message, that is generated from a AssemblyExample.dll
-            Type_Reflection.TestMethod();
+            //Type_Reflection.TestMethod();
             //LateBinding.TestMethod();
             //Attributes.TestMethod();
             //Attributes.TestMethod();
@@ -31,8 +32,12 @@ namespace CsExam
             //MultiThreads.TestMethod();
             //MultiThreads.TestPassingData();
             //MultiThreads.TestWithPriority();
-            //MultiThreads_Locks.TestMethod();
-            //MultiThreads_Locks.TestMethod2();
+            //MultiThreads_Locks.TestWithoutLock();
+            MultiThreads_Locks.TestWithLock();
+            //MultiThreads_Locks.TestWithMonitor();
+            //Tasks.TestMethod();
+            //Tasks.TestMethod2();
+            //Tasks.TestInParallel();
 
             //6 - LINQ to XML
             //SerializeTest.CreateXmlFile();

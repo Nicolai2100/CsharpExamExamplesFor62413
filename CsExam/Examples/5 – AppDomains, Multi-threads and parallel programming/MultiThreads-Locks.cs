@@ -7,7 +7,7 @@ namespace CsExam.Examples
     {
         static bool done;
  
-        public static void TestMethod()
+        public static void TestWithoutLock()
         {
             new Thread (WriteDone).Start();
             WriteDone();
@@ -41,5 +41,20 @@ namespace CsExam.Examples
             WriteDoneWithLock();
         }
 
+        public static void TestWithMonitor()
+        {
+            new Thread(WriteDone).Start();
+            
+            Monitor.Enter(locker);
+            try
+            {
+                WriteDone();
+            }
+            finally
+            {
+                Monitor.Exit(locker);
+            }
+        }
+        
     }
 }
