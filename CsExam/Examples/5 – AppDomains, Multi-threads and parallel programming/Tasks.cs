@@ -13,6 +13,8 @@ namespace CsExam.Examples
 
         public static void TestMethod()
         {
+            Console.WriteLine("\nTest med en task og status på task:");
+
             Task<int> t = new Task<int>(() =>
             {
                 Thread.Sleep(3000); //Man bør ikke bruge Thread.Sleep på tasks. I stedet Task.Delay
@@ -38,6 +40,8 @@ namespace CsExam.Examples
         
         public static void TestWithAsyncAndAwait()
         {
+            Console.WriteLine("\nTest med async og await:");
+            
             Task<int> t = GetDotNetCount();
             Console.WriteLine(t.Status);
             var res = GetDotNetCount().Result; //Dette får tråden til at vente på, at tasken er færdig, så den kan returne en værdi.
@@ -46,6 +50,8 @@ namespace CsExam.Examples
 
         public static void TestInParallel()
         {
+            Console.WriteLine("\nTest af paralelle tasks:");
+            
             var task1 = GetDotNetCount();
             var task2 = GetDotNetCount();
 

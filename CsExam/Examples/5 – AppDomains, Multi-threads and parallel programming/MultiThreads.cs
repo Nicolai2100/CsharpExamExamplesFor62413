@@ -30,6 +30,8 @@ namespace CsExam.Examples
 
         public static void TestMethod()
         {
+            Console.WriteLine("\nTest af to tråde, der samtidig printer tal 1-10:");
+            
             Thread thr1 = new Thread(Method1); 
             Thread thr2 = new Thread(Method2);
             thr1.Name = "Metode 1 tråd";
@@ -40,20 +42,27 @@ namespace CsExam.Examples
         
         public static void TestJoin()
         {
+            Console.WriteLine("\nTest af tråd, som der kaldes join på:");
+            
             Thread t = new Thread(Method1);
             t.Start();
             t.Join();
+            //Hovedtråd venter på at "t" er færdig.
             Console.WriteLine("Tråden t er nu færdig!");
         }
 
         public static void TestPassingData()
         {
+            Console.WriteLine("\nTest af tråd, hvor der passes en string til metoden:");
+            
             Thread t = new Thread(() => Method3("Denne besked er passed til Message3"));
             t.Start();
         }
         
         public static void TestWithPriority()
         {
+            Console.WriteLine("\nTest af to tråde med høj og lav prioritet:");
+            
             Thread thr1 = new Thread(Method1); 
             Thread thr2 = new Thread(Method2);
             thr1.Name = "Metode 1 tråd";

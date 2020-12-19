@@ -29,15 +29,16 @@ namespace CsExam
             //Attributes.TestMethod();
             
             //5 – AppDomains, Multi-threads and parallel programming
-            //MultiThreads.TestMethod();
-            //MultiThreads.TestPassingData();
-            //MultiThreads.TestWithPriority();
-            //MultiThreads_Locks.TestWithoutLock();
+            MultiThreads.TestMethod();
+            MultiThreads.TestJoin();
+            MultiThreads.TestPassingData();
+            MultiThreads.TestWithPriority();
+            MultiThreads_Locks.TestWithoutLock();
             MultiThreads_Locks.TestWithLock();
-            //MultiThreads_Locks.TestWithMonitor();
-            //Tasks.TestMethod();
-            //Tasks.TestMethod2();
-            //Tasks.TestInParallel();
+            MultiThreads_Locks.TestWithMonitor();
+            Tasks.TestMethod();
+            Tasks.TestWithAsyncAndAwait();
+            Tasks.TestInParallel();
 
             //6 - LINQ to XML
             //SerializeTest.CreateXmlFile();
