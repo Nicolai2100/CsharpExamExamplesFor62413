@@ -34,7 +34,7 @@ namespace CsExam
 
             //6 - LINQ to XML
             //SerializeTest.CreateXmlFile();
-            //SerializeTest.ReadSavedXmlFile();
+            SerializeTest.ReadSavedXmlFile();
             //XMLToLINQExample.LoadXml();
 
             //7 - Dynamic Values
