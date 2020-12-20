@@ -4,12 +4,11 @@ using System.Linq;
 
 namespace CsExam.Examples
 {
-    class Collections
+    public class Collections
     {
         public static void TestMethod()
         {
-
-            //List
+            //List - Generisk klasse
             var salmons = new List<string> { "chinook", "coho", "pink", "sockeye" };
             foreach (var salmon in salmons)
             {
@@ -17,7 +16,7 @@ namespace CsExam.Examples
             }
             Console.WriteLine();
             salmons.Remove("coho");
-
+            salmons.Find(item => item == "pink");
 
             //Linq eksempel
             List<Element> elements = BuildList();
@@ -33,8 +32,6 @@ namespace CsExam.Examples
             {
                 Console.WriteLine(theElement.Name + " " + theElement.AtomicNumber);
             }
-
-
 
             Console.WriteLine();
             //Iterator example
@@ -73,8 +70,19 @@ namespace CsExam.Examples
             }
             Console.WriteLine(queue.Dequeue().Name);
         }
+        private static IEnumerable<int> EvenSequence(int firstNumber, int lastNumber)
+        {
+            // Yield even numbers in the range.
+            for (var number = firstNumber; number <= lastNumber; number++)
+            {
+                if (number % 2 == 0)
+                {
+                    yield return number;
+                }
+            }
+        }
 
-        private static List<Element> BuildList()
+        public static List<Element> BuildList()
         {
             return new List<Element>
              {
@@ -89,21 +97,12 @@ namespace CsExam.Examples
             public string Symbol { get; set; }
             public string Name { get; set; }
             public int AtomicNumber { get; set; }
-        }
 
-        private static IEnumerable<int> EvenSequence(
-           int firstNumber, int lastNumber)
-        {
-            // Yield even numbers in the range.
-            for (var number = firstNumber; number <= lastNumber; number++)
+            public override string ToString()
             {
-                if (number % 2 == 0)
-                {
-                    yield return number;
-                }
+                return String.Format("Symbol: {0}, number: {1}, name: {2}", Symbol, AtomicNumber, Name);
             }
         }
-
     }
 }
 

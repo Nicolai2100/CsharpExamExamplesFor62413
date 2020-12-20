@@ -1,6 +1,5 @@
 using System;
 using System.Net.Http;
-using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -29,12 +28,12 @@ namespace CsExam.Examples
             Console.WriteLine(t.Status);
             Console.WriteLine(t.Result); //Venter på, den er færdig
             Console.WriteLine(t.Status);
+            Console.WriteLine("Returnerer fra metoden");
         }
         
         public static async Task<int> GetDotNetCount()
         {
             var html = await _httpClient.GetStringAsync("https://dotnetfoundation.org");
-
             return Regex.Matches(html, @"\.NET").Count;
         }
         
@@ -44,8 +43,11 @@ namespace CsExam.Examples
             
             Task<int> t = GetDotNetCount();
             Console.WriteLine(t.Status);
-            var res = GetDotNetCount().Result; //Dette får tråden til at vente på, at tasken er færdig, så den kan returne en værdi.
+            //Dette får tråden til at vente på, at tasken er færdig, så den kan returne en værdi.
+            var res = t.Result; 
+            Console.WriteLine(t.Status);
             Console.WriteLine(res);
+            Console.WriteLine("Returnerer fra metoden");
         }
 
         public static void TestInParallel()
@@ -54,8 +56,8 @@ namespace CsExam.Examples
             
             var task1 = GetDotNetCount();
             var task2 = GetDotNetCount();
-
-            var parallelTask = Task.WhenAll(task1, task2); //Kører de to tasks parallelt
+            //Kører de to tasks parallelt
+            var parallelTask = Task.WhenAll(task1, task2); 
             var res = parallelTask.Result;
             Console.WriteLine(res[0]);
             Console.WriteLine(res[1]);

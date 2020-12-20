@@ -14,8 +14,11 @@ namespace CsExam.Examples
     // a null reference.
     [XmlRoot("PurchaseOrder", Namespace = "http://www.cpandl.com",
     IsNullable = false)]
+    [Serializable]
     public class PurchaseOrder
     {
+        [NonSerialized]
+        private string SecretPriority;
         public Address ShipTo;
         public string OrderDate;
         // The XmlArray attribute changes the XML element name
@@ -26,6 +29,7 @@ namespace CsExam.Examples
         public decimal ShipCost;
         public decimal TotalCost;
     }
+    [Serializable]
     public class Address
     {
         // The XmlAttribute attribute instructs the XmlSerializer to serialize the
@@ -43,6 +47,7 @@ namespace CsExam.Examples
         public string State;
         public string Zip;
     }
+    [Serializable]
     public class OrderedItem
     {
         public string ItemName;
@@ -66,25 +71,10 @@ namespace CsExam.Examples
             SerializeTest t = new SerializeTest();
 
             string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
-            Console.WriteLine("Lagt i " + path);
             //Skab filen og gem den i brugerens home dir
             //t.CreatePO(path + "\\po.xml");
-            t.CreatePO("po2.xml");
-        }
-
-
-        public static void ReadSavedXmlFile()
-        {
-            // Read and write purchase orders.
-            SerializeTest t = new SerializeTest();
-
-            string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
-            if (Environment.OSVersion.Version.Major >= 6)
-            {
-                path = Directory.GetParent(path).ToString();
-            }
-            //Indlæs filen fra brugerens home dir
-            t.ReadPO(path + "\\po.xml");
+            t.CreatePO(path+"\\po.xml");
+            Console.WriteLine("Filen gemt i " + path);
         }
 
         private void CreatePO(string filename)
@@ -108,15 +98,15 @@ namespace CsExam.Examples
             po.OrderDate = System.DateTime.Now.ToLongDateString();
 
             // Creates an OrderedItem.
-            OrderedItem i1 = new OrderedItem();
-            i1.ItemName = "Widget S";
-            i1.Description = "Small widget";
-            i1.UnitPrice = (decimal)5.23;
-            i1.Quantity = 3;
-            i1.Calculate();
+            OrderedItem item1 = new OrderedItem();
+            item1.ItemName = "Widget S";
+            item1.Description = "Small widget";
+            item1.UnitPrice = (decimal)5.23;
+            item1.Quantity = 3;
+            item1.Calculate();
 
             // Inserts the item into the array.
-            OrderedItem[] items = { i1 };
+            OrderedItem[] items = { item1 };
             po.OrderedItems = items;
             // Calculate the total cost.
             decimal subTotal = new decimal();
@@ -131,6 +121,20 @@ namespace CsExam.Examples
             serializer.Serialize(writer, po);
             writer.Close();
         }
+        public static void ReadSavedXmlFile()
+        {
+            // Read and write purchase orders.
+            SerializeTest t = new SerializeTest();
+
+            string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
+            if (Environment.OSVersion.Version.Major >= 6)
+            {
+                path = Directory.GetParent(path).ToString();
+            }
+            //Indlæs filen fra brugerens home dir
+            t.ReadPO(path + "\\po.xml");
+        }
+
         protected void ReadPO(string filename)
         {
             // Creates an instance of the XmlSerializer class;

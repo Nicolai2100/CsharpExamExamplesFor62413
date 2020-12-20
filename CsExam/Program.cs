@@ -9,18 +9,27 @@ namespace CsExam
         static void Main(string[] args)
         {
             //1 - Collections, Generics, Exceptions, Interfaces
+
             //ExceptionExample.TestMethod();
+            //Console.WriteLine("------------------------------------------------------");
             //PolyMorphTest.TestMethod();
+            //Console.WriteLine("------------------------------------------------------");
             //GenericArrayExample.TestMethod();
+            //Console.WriteLine("------------------------------------------------------");
             //Collections.TestMethod();
 
             //2 - Delegates, Events, LINQ - Language - Integrated Query
-            //DelegatesExample.TestMethod();
-            //Events.TestMethod();
-            //SampleCollection<String>.TestMethod();
-            //Events.TestMethod();
-            //LINQExample.TestMethod();
-            //OperatorOverloading.TestMethod();       
+            DelegatesExample.TestMethod();
+            Console.WriteLine("------------------------------------------------------");
+            Events.TestMethod();
+            Console.WriteLine("------------------------------------------------------");
+            SampleCollection<String>.TestMethod();
+            Console.WriteLine("------------------------------------------------------");
+            Events.TestMethod();
+            Console.WriteLine("------------------------------------------------------");
+            LINQExample.TestMethod();
+            Console.WriteLine("------------------------------------------------------");
+            OperatorOverloading.TestMethod();
 
             //4 - Assemblies, Type reflection, Late binding, and Attribute Programming
             //Assemblies.TestMethod(); //Prints out a message, that is generated from a AssemblyExample.dll
@@ -33,28 +42,45 @@ namespace CsExam
             //Console.WriteLine("------------------------------------------------------");
 
             //5 – AppDomains, Multi-threads and parallel programming
-            MultiThreads.TestMethod();
-            MultiThreads.TestJoin();
-            MultiThreads.TestPassingData();
-            MultiThreads.TestWithPriority();
-            MultiThreads_Locks.TestWithoutLock();
-            MultiThreads_Locks.TestWithLock();
-            MultiThreads_Locks.TestWithMonitor();
-            Tasks.TestMethod();
-            Tasks.TestWithAsyncAndAwait();
-            Tasks.TestInParallel();
+            //Console.WriteLine("MultiThreads-----------------------------------------");
+            //MultiThreads.TestMethod();
+            //Console.WriteLine("------------------------------------------------------");
+            //MultiThreads.TestUdenJoin();
+            //Console.WriteLine("------------------------------------------------------");
+            //MultiThreads.TestMedJoin();
+            //Console.WriteLine("------------------------------------------------------");
+            //MultiThreads.TestPassingData();
+            //Console.WriteLine("------------------------------------------------------");
+            //MultiThreads.TestWithPriority();    
+            //Console.WriteLine("MultiThreadsLocks--------------------------------------");
 
-            //6 - LINQ to XML
+            //MultiThreadsLocks.TestWithoutLock();
+            //MultiThreadsLocks.TestWithLock();
+            //MultiThreadsLocks.TestWithMonitor();
+
+            //Tasks.TestMethod();
+            //Console.WriteLine("------------------------------------------------------");
+            //Tasks.TestWithAsyncAndAwait();
+            //Console.WriteLine("------------------------------------------------------");
+            //Tasks.TestInParallel();
+
+            ////6 - LINQ to XML
             //SerializeTest.CreateXmlFile();
+            //Console.WriteLine("------------------------------------------------------");
+
             //SerializeTest.ReadSavedXmlFile();
+            //Console.WriteLine("------------------------------------------------------");
+
             //XMLToLINQExample.LoadXml();
+            //Console.WriteLine("------------------------------------------------------");
+
+            //XMLToLINQExample.XMLTree();
+            //Console.WriteLine("------------------------------------------------------");
 
             //7 - Dynamic Values
-            //DynamicExample.TestMethod();
+            //DynamicTypesExample.TestMethod();
 
-
-
-            Console.WriteLine("Press any key to exit");
+            Console.WriteLine("Press Enter to exit");
             Console.ReadLine();
         }
 

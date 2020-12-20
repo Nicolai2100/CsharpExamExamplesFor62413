@@ -28,7 +28,7 @@ namespace CsExam.Examples
     //Publisher af event
     public class ProcessBusinessLogic
     {
-        // declaring an event using built-in EventHandler
+        //Declaring an event using built-in EventHandler
         public event EventHandler ProcessNotify;
      
         //Use "event" keyword with delegate type variable to declare an event.

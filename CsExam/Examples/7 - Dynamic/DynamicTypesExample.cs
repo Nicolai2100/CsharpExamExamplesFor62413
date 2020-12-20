@@ -1,7 +1,9 @@
 ﻿using System;
 namespace CsExam.Examples
 {
-    public class DynamicExample
+    //dynamic types are NOT strongly typed
+    //Well suited with late binding
+    public class DynamicTypesExample
     {
         static dynamic PrintValue(dynamic val)
         {
