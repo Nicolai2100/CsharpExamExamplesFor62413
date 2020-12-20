@@ -5,9 +5,7 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsExam", "CsExam\CsExam.csproj", "{36EDEBBB-98F0-4B53-A73A-9EE6EFB2282B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Example", "WPF_Example\WPF_Example.csproj", "{5F896D38-01CA-4913-B1C7-13C47CCDC047}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyExample", "AssemblyExample\AssemblyExample.csproj", "{7B42EB12-3EF4-4E90-96A3-4683D7E231BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_Example", "WPF_Example\WPF_Example.csproj", "{5F896D38-01CA-4913-B1C7-13C47CCDC047}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{36EDEBBB-98F0-4B53-A73A-9EE6EFB2282B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36EDEBBB-98F0-4B53-A73A-9EE6EFB2282B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36EDEBBB-98F0-4B53-A73A-9EE6EFB2282B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B42EB12-3EF4-4E90-96A3-4683D7E231BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B42EB12-3EF4-4E90-96A3-4683D7E231BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B42EB12-3EF4-4E90-96A3-4683D7E231BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B42EB12-3EF4-4E90-96A3-4683D7E231BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5F896D38-01CA-4913-B1C7-13C47CCDC047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5F896D38-01CA-4913-B1C7-13C47CCDC047}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F896D38-01CA-4913-B1C7-13C47CCDC047}.Release|Any CPU.ActiveCfg = Release|Any CPU

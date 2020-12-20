@@ -2,7 +2,11 @@
 
 namespace CsExam.Examples
 {
-
+    //Enkapsuleret metode
+    //must have correct parameters
+    //A delegate is a type that holds a reference to a method.A delegate is declared with a signature that shows the 
+    //turn type and parameters for the methods it references, and it can hold references 
+    //by to methods that match its signature. A delegate is thus equivalent to a type-safe function pointer or a callback. 
     public class DelegatesExample
     {
         public delegate void StrDelegate(string var);
@@ -11,24 +15,24 @@ namespace CsExam.Examples
 
         public static void GetData1(string Name)
         {
-            str += "GetData_One : " + Name;
+            str += "Data_One : " + Name;
         }
 
         public static void GetData2(string Name)
         {
-            str += " GetData_Two : " + Name;
+            str += "Data_Two : " + Name;
         }
 
         public static void GetData3(string Name)
         {
-            str += " GetData_Three : " + Name;
+            str += "Data_Three : " + Name;
         }
         public static string getStr()
         {
             return str;
         }
 
-        public static void testings()
+        public static void TestMethod()
         {
             //create delegate instances
             StrDelegate objMyDelegate = new StrDelegate(GetData1);
@@ -53,11 +57,15 @@ namespace CsExam.Examples
             objMyDelegate("4 ");
             Console.WriteLine("Value of str: {0}", getStr());
 
-            someOtherMethod(objMyDelegate);
+            SomeOtherMethod(objMyDelegate);
         }
-        static void someOtherMethod(Delegate obj)
+        static void SomeOtherMethod(Delegate obj)
         {
-            Console.WriteLine(obj.ToString());
+            foreach (var method in obj.GetInvocationList())
+            {
+                Console.WriteLine(method.Method.Name);
+            }
+            Console.WriteLine(obj.GetInvocationList().Length);
         }
     }
 }

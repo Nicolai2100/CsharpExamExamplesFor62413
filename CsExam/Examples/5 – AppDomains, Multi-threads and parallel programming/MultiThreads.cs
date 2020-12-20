@@ -29,6 +29,7 @@ namespace CsExam.Examples
             Thread thr2 = new Thread(Method2); 
             thr1.Start(); 
             thr2.Start(); 
+
         }
     }
 }

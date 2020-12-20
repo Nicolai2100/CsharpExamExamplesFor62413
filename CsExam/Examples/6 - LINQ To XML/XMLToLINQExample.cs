@@ -15,6 +15,7 @@ namespace CsExam.Examples
             Console.WriteLine("Printer hele xml-filen");
             Console.WriteLine(purchaseOrder);
 
+            //method syntax form:
             //IEnumerable<string> partNos = purchaseOrder.Descendants("Item").Select(x => (string)x.Attribute("PartNumber"));
 
             IEnumerable<string> partNos = from item in purchaseOrder.Descendants("Item")
@@ -34,13 +35,13 @@ namespace CsExam.Examples
             //                                       .Where(item => ((string)item.Element("ProductName")).Contains("Baby"))
             //                             .OrderBy(order => order.Element("PartNumber"));
 
-            IEnumerable<XElement> dataFromSource2 = from item in purchaseOrder.Descendants("Item")
+            IEnumerable<XElement> babyItems = from item in purchaseOrder.Descendants("Item")
                                                     where item.Element("ProductName").Value.Contains("Baby")
                                                     orderby (string)item.Element("PartNumber")
                                                     select item;
 
             Console.WriteLine("Printer alle baby-items i PO");
-            foreach (var item in dataFromSource2)
+            foreach (var item in babyItems)
             {
                 Console.WriteLine("The items are: {0}", item);
             }
@@ -57,14 +58,13 @@ namespace CsExam.Examples
             }
 
             Console.WriteLine("Quantity større end 1");
-            var dataFromSource3 = from name in pricesByPartNos
+            var qGreaterThanOne = from name in pricesByPartNos
                                  where ((int)name.Element("Quantity") > 1)
                                  select name;
-            foreach (var item in dataFromSource3)
+            foreach (var item in qGreaterThanOne)
             {
                 Console.WriteLine("The items are: {0}", item);
             }
-
         }
 
         //Hvis man vil skrive et xml-objekt direkte

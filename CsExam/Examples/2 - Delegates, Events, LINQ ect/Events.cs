@@ -1,5 +1,8 @@
 ﻿using System;
 
+//An event is created in two steps:
+//- First, a delegate is created – that points at a method
+//- Second, an event is created
 namespace CsExam.Examples
 {
     public class Events

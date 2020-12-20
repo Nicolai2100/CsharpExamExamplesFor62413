@@ -1,4 +1,6 @@
 using System;
+//Namespace peger på den dll
+//- Kan gøres efter "”Add Reference” to Library project (Project | Add Reference )"
 using AssemblyExample;
 
 namespace CsExam.Examples
@@ -10,6 +12,5 @@ namespace CsExam.Examples
             ClassExample example = new ClassExample();
             Console.WriteLine(example.MessageFromAssembly("Nicolai"));
         }
-        
     }
 }

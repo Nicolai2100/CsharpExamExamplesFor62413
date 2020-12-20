@@ -8,6 +8,7 @@ namespace CsExam.Examples
     {
         public static void TestMethod()
         {
+
             //List
             var salmons = new List<string> { "chinook", "coho", "pink", "sockeye" };
             foreach (var salmon in salmons)
@@ -17,8 +18,12 @@ namespace CsExam.Examples
             Console.WriteLine();
             salmons.Remove("coho");
 
+
             //Linq eksempel
             List<Element> elements = BuildList();
+            //List<> has a FindAll method, lambda expression
+            List<Element> evenNumbers = elements.FindAll(i => (i.AtomicNumber % 2) == 0);
+
             var subset = from theElement in elements
                          where theElement.AtomicNumber < 22
                          orderby theElement.Name
@@ -28,6 +33,8 @@ namespace CsExam.Examples
             {
                 Console.WriteLine(theElement.Name + " " + theElement.AtomicNumber);
             }
+
+
 
             Console.WriteLine();
             //Iterator example

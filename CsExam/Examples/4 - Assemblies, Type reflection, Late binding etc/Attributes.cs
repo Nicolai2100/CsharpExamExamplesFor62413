@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 namespace CsExam.Examples
 {
@@ -19,18 +20,31 @@ namespace CsExam.Examples
             }  
         }
 
-        
-        [Test("Nicolai")]
+        [Obsolete("Use Method2!")]
         public void Method1()
         {
-            //Kode her
+            Console.WriteLine("Hej");
+        }
+
+        [Test("Nicolai")]
+        public void Method2()
+        {
+            Beep(1200, 500);
         }
         
+        [DllImport("kernel32.dll")] 
+        public static extern bool Beep(int frequency, int duration);
+
         public static void TestMethod()
         {
             Attributes test = new Attributes();
+
+            test.Method1();
+            test.Method2();
+            
             Type testType = test.GetType();
-            var attributes = testType.GetMember("Method1")[0].CustomAttributes;
+            var attributes = testType.GetMember("Method2")[0].CustomAttributes;
+            
             foreach (var attribute in attributes)
             {
                 Console.WriteLine(attribute); //Det fulde navn

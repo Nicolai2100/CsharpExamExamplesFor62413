@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
+
 namespace CsExam.Examples
 {
     //Advanced type contruction
 
-    class SampleCollection<T>
+    class SampleCollection<T> : IEnumerable
     {
         // Declare an array to store the data elements.
         private T[] arr = new T[100];
@@ -26,6 +28,11 @@ namespace CsExam.Examples
             for (int i = 0; i < 10; i++)
                 Console.WriteLine(stringCollection[i]);
 
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }

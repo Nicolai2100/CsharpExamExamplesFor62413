@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AssemblyExample\AssemblyExample.csproj" />
+    <Reference Include="AssemblyExample">
+      <HintPath>..\..\..\..\AppData\AssemblyExample.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

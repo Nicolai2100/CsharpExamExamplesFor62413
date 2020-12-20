@@ -24,7 +24,7 @@
 
         <TextBox x:Name="TextBox1" Text="{Binding Path = BoundStr, Mode=TwoWay, FallbackValue='Skriv noget her.'}" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" Width="120" />
         <Button x:Name="Button1" Content="Filmkritikeren" Grid.Column="1" Grid.Row="1" Click="Button_Click1" />
-        <Button x:Name="Button2" Content="{Binding ButtonText, FallbackValue='Søg hjælp!'}" Grid.Column="1" Grid.Row="2" Click="Button_Click2" />
+        <Button x:Name="Button2" Content="{Binding ButtonText, FallbackValue='Søg hjælp!'}" Grid.Column="1" Grid.Row="2" Click="Button_Click2" HorizontalAlignment="Left" Width="120" />
 
         <WebBrowser x:Name="webb" Grid.Column="3" Grid.Row="3" Visibility="Hidden" Source="https://www.google.com/"/>
         <Image Name="imag" Grid.Column="3" Grid.Row="3" Visibility="Visible" />
