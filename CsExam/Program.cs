@@ -1,6 +1,5 @@
 ﻿using CsExam.Examples;
 using System;
-using System.IO;
 
 namespace CsExam
 {
@@ -9,7 +8,6 @@ namespace CsExam
         static void Main(string[] args)
         {
             //1 - Collections, Generics, Exceptions, Interfaces
-
             //ExceptionExample.TestMethod();
             //Console.WriteLine("------------------------------------------------------");
             //PolyMorphTest.TestMethod();
@@ -19,17 +17,17 @@ namespace CsExam
             //Collections.TestMethod();
 
             //2 - Delegates, Events, LINQ - Language - Integrated Query
-            DelegatesExample.TestMethod();
-            Console.WriteLine("------------------------------------------------------");
-            Events.TestMethod();
-            Console.WriteLine("------------------------------------------------------");
-            SampleCollection<String>.TestMethod();
-            Console.WriteLine("------------------------------------------------------");
-            Events.TestMethod();
-            Console.WriteLine("------------------------------------------------------");
-            LINQExample.TestMethod();
-            Console.WriteLine("------------------------------------------------------");
-            OperatorOverloading.TestMethod();
+            //DelegatesExample.TestMethod();
+            //Console.WriteLine("------------------------------------------------------");
+            //Events.TestMethod();
+            //Console.WriteLine("------------------------------------------------------");
+            //SampleCollection<String>.TestMethod();
+            //Console.WriteLine("------------------------------------------------------");
+            //Events.TestMethod();
+            //Console.WriteLine("------------------------------------------------------");
+            //LINQExample.TestMethod();
+            //Console.WriteLine("------------------------------------------------------");
+            //OperatorOverloading.TestMethod();
 
             //4 - Assemblies, Type reflection, Late binding, and Attribute Programming
             //Assemblies.TestMethod(); //Prints out a message, that is generated from a AssemblyExample.dll
@@ -51,18 +49,18 @@ namespace CsExam
             //Console.WriteLine("------------------------------------------------------");
             //MultiThreads.TestPassingData();
             //Console.WriteLine("------------------------------------------------------");
-            //MultiThreads.TestWithPriority();    
+            //MultiThreads.TestWithPriority();
             //Console.WriteLine("MultiThreadsLocks--------------------------------------");
 
             //MultiThreadsLocks.TestWithoutLock();
             //MultiThreadsLocks.TestWithLock();
             //MultiThreadsLocks.TestWithMonitor();
 
-            //Tasks.TestMethod();
-            //Console.WriteLine("------------------------------------------------------");
-            //Tasks.TestWithAsyncAndAwait();
-            //Console.WriteLine("------------------------------------------------------");
-            //Tasks.TestInParallel();
+            Tasks.TestMethod();
+            Console.WriteLine("------------------------------------------------------");
+            Tasks.TestWithAsyncAndAwait();
+            Console.WriteLine("------------------------------------------------------");
+            Tasks.TestInParallel();
 
             ////6 - LINQ to XML
             //SerializeTest.CreateXmlFile();
@@ -82,17 +80,6 @@ namespace CsExam
 
             Console.WriteLine("Press Enter to exit");
             Console.ReadLine();
-        }
-
-        struct Komponent
-        {
-            public string type;
-            public string navn;
-            public Komponent(string t, string n)
-            {
-                type = t;
-                navn = n;
-            }
         }
     }
 }

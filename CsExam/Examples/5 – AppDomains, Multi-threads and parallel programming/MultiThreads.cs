@@ -16,7 +16,6 @@ namespace CsExam.Examples
                 }
             }
         } 
-  
         public static void Method2() 
         { 
            for (int i = 0; i <= 100000; i++) {

@@ -50,7 +50,7 @@ namespace WPF_Example
         public MainWindow()
         {
             DataContext = this;
-            
+
 
             InitializeComponent();
             OnStartUp();
@@ -74,13 +74,11 @@ namespace WPF_Example
             BitmapImage bi = new BitmapImage(new Uri(string.Format(@"{0}\giphy(1).gif", path)));
             imag.Source = bi;
 
-            ElementList.ItemsSource = BoundElements;
-            foreach (var element in BuildList())
-            {
-                BoundElements.Add(element);
-                Thread.Sleep(2000);
-            }
+           
         }
+
+       
+
         protected void Button_Click1(object sender, RoutedEventArgs rea)
         {
             var outPut = TextBox1.Text;
@@ -102,6 +100,7 @@ namespace WPF_Example
             BoundStr = outPut;
             MessageBox.Show(outPut);
             Animation_Click(sender, rea);
+            Button_Click3();
         }
         protected void Button_Click2(object sender, RoutedEventArgs rea)
         {
@@ -114,6 +113,21 @@ namespace WPF_Example
                 webb.Visibility = Visibility.Visible;
             }
         }
+
+        protected void Button_Click3()
+        {
+            ElementList.ItemsSource = BoundElements;
+            {
+                Thread.Sleep(2000);
+
+                foreach (var element in BuildList())
+                {
+                    BoundElements.Add(element);
+                }
+            }
+
+        }
+
         private void Animation_Click(object sender, RoutedEventArgs e)
         {
             DoubleAnimation da = new DoubleAnimation();

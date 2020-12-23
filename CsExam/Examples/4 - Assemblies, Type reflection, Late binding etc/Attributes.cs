@@ -52,5 +52,14 @@ namespace CsExam.Examples
                 Console.WriteLine(attribute.ConstructorArguments[0]);
             }
         }
+
+        //[Route("api/[controller]")]
+        //[ApiController]
+
+        //[Authorize(Policy = "RequireAdminOnly")]
+        //[HttpGet]
+
+        //[HttpGet("{id}")]
+
     }
 }

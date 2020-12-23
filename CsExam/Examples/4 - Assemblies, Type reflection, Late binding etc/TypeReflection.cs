@@ -7,7 +7,6 @@ namespace CsExam.Examples
 {
     public class TypeReflection
     {
-        public delegate void StrDelegate(string var);
         public static void TestMethod()
         {
             string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).FullName;
@@ -56,11 +55,7 @@ namespace CsExam.Examples
 
             var ctors = parameterType.GetConstructors();
             var ctor = (ctors[0]);
-
-            //var somt = ctor.Invoke(parameterType, new Object[] {});
-            //Console.WriteLine(somt.ToString());
-            //Console.WriteLine(somt.GetType());
-            //StrDelegate objMyDelegate = new StrDelegate();
+           
         }
     }
 }
